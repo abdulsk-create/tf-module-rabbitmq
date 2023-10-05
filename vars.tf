@@ -6,4 +6,6 @@ variable "ssh_ingress_cidr" {}
 variable "instance_type" {}
 variable "subnet_ids" {}
 variable "zone_id" {}
+variable "kms_key_id" {}
+
 

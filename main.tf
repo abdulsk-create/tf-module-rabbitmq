@@ -39,6 +39,10 @@ resource "aws_instance" "main" {
   subnet_id              = var.subnet_ids[0]
   tags                   = merge(local.tags, { Name = local.name_prefix })
   user_data              = file("${path.module}/userdata.sh")
+  root_block_device {
+    encrypted  = true
+    kms_key_id = var.kms_key_id
+  }
 }
 
 
